@@ -5,7 +5,7 @@ Connect a 20x4 Liquid Crystal Display (LCD) with an I2C module to an Arduino.
 
 1. **Install Arduino IDE and Codes**
    - Download and install the Arduino IDE from the official website.
-   - Download the folder `LiquidCrystal_12 with Arduino` by going to website `https://github.com/M-Soban-Hussain/Projects/tree/main/LiquidCrystal_12%20with%20Arduino` and pasting `https://github.com/M-Soban-Hussain/Projects/tree/main/LiquidCrystal_12%20with%20Arduino` into the box and pressing Enter.
+   - Download the folder by going to website `https://download-directory.github.io/` and pasting `https://github.com/M-Soban-Hussain/Projects/tree/main/LiquidCrystal_12%20with%20Arduino` into the box and pressing Enter.
 
 2. **Add LiquidCrystal Library**
    - 📁 Copy the library`LiquidCrystal_I2C-1.1.2` to `C:\Program Files\Arduino\Libraries`.
