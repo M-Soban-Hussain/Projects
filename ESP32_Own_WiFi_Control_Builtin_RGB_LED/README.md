@@ -1,7 +1,7 @@
 ---
 
 ### 🚀 **Steps to Set Up and Control Your ESP32**
-
+---
 1. **Download & Install Arduino IDE**  
    📥 Visit the official site and download the latest version:  
    [Arduino IDE Download](https://www.arduino.cc/en/software)  
