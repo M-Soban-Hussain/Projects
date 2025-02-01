@@ -1,0 +1,54 @@
+#include <WiFi.h>
+
+const char *ssid = "ESP32-Access-Point";  // ESP32 WiFi network name
+const char *password = "123456789";       // WiFi password
+
+const int ledPin = LED_BUILTIN;  // LED pin number
+WiFiServer server(80);           // Server running on port 80 (HTTP)
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);  // Set LED pin as output
+
+  // Start WiFi in AP mode
+  WiFi.softAP(ssid, password);
+
+  // Start the server
+  server.begin();
+  Serial.println("WiFi Access Point Started");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.softAPIP());
+}
+
+void loop() {
+  WiFiClient client = server.available();  // Listen for incoming clients
+
+  if (client) {
+    String request = "";  // Variable to store client request
+
+    while (client.available()) {
+      request += char(client.read());  // Read client data
+    }
+
+    // Check if the client requested to turn the LED on or off
+    if (request.indexOf("/LED=ON") != -1) {
+      digitalWrite(ledPin, HIGH);  // Turn LED on
+    }
+    if (request.indexOf("/LED=OFF") != -1) {
+      digitalWrite(ledPin, LOW);   // Turn LED off
+    }
+
+    // Respond to the client with a simple webpage
+    client.println("HTTP/1.1 200 OK");
+    client.println("Content-Type: text/html");
+    client.println("Connection: close");
+    client.println();
+    client.println("<html><body><h1>ESP32 Web Control</h1>");
+    client.println("<p><a href=\"/LED=ON\">Turn LED ON</a></p>");
+    client.println("<p><a href=\"/LED=OFF\">Turn LED OFF</a></p>");
+    client.println("</body></html>");
+
+    delay(1);
+    client.stop();  // Close the connection
+  }
+}
