@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
-const char *ssid = "ESP32-Access-Point";  // ESP32 WiFi network name
-const char *password = "123456789";       // WiFi password
+const char *ssid = "ESP-32";  // ESP32 WiFi network name
+const char *password = "";       // WiFi password
 
 const int ledPin = LED_BUILTIN;  // LED pin number
 WiFiServer server(80);           // Server running on port 80 (HTTP)
@@ -38,14 +38,21 @@ void loop() {
       digitalWrite(ledPin, LOW);   // Turn LED off
     }
 
-    // Respond to the client with a simple webpage
+    // Respond to the client with a simple styled webpage
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html");
     client.println("Connection: close");
     client.println();
-    client.println("<html><body><h1>ESP32 Web Control</h1>");
-    client.println("<p><a href=\"/LED=ON\">Turn LED ON</a></p>");
-    client.println("<p><a href=\"/LED=OFF\">Turn LED OFF</a></p>");
+    client.println("<html><head><style>");
+    client.println("body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }");
+    client.println("h1 { color: #333; }");
+    client.println(".btn { display: inline-block; padding: 15px 30px; font-size: 20px; margin: 10px; text-decoration: none; color: white; border-radius: 5px; }");
+    client.println(".on { background-color: green; }");
+    client.println(".off { background-color: red; }");
+    client.println("</style></head><body>");
+    client.println("<h1>ESP32 Web Control</h1>");
+    client.println("<a class='btn on' href='/LED=ON'>Turn LED ON</a>");
+    client.println("<a class='btn off' href='/LED=OFF'>Turn LED OFF</a>");
     client.println("</body></html>");
 
     delay(1);
