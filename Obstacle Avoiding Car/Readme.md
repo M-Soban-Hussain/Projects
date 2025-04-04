@@ -20,6 +20,13 @@ An Arduino-powered robot car that senses and avoids obstacles all by itself! Thi
 A neat and easy-to-follow **circuit diagram** is included in this repo to help you connect everything the right way! 🧾🛠️
 
 ---
+## 💻 Software used: Arduino IDE
+
+- used to write and upload code  
+- select board: arduino uno  
+- set baud rate: 9600  
+- install necessary drivers if needed  
+- open serial monitor for distance output
 
 ## 🛠️ Step-by-Step Assembly
 
