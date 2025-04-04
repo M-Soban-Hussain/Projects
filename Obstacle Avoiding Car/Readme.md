@@ -81,11 +81,3 @@ Upload the Arduino sketch in this repo to your board. It handles:
 - Have fun watching your robot dodge stuff like a pro! 😎
 
 ---
-
-## 🚀 License
-
-MIT — use it freely in your own projects! 💻🧑‍🔧
-
----
-
-Let me know if you want a badge, image preview, or anything else added!
