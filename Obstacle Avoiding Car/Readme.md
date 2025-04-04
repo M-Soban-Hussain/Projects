@@ -86,5 +86,7 @@ Upload the Arduino sketch in this repo to your board. It handles:
 - Make sure all grounds are connected  
 - Double-check wiring before powering on  
 - Have fun watching your robot dodge stuff like a pro! 😎
+- I also Created A Flowchat to make you understand what is the flow of Control and Working.
+- I also added the Pic of the Arduino type taht I'm using in this Project.
 
 ---
