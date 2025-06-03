@@ -39,5 +39,6 @@ This project uses **Arduino UNO** and **NEO-6M GPS module** to track real-time G
 
 * Location data is blurred for privacy.
 * Add the `GPSNEO6M_Library` to your Arduino IDE before uploading the code.
+* Visit https://www.youtube.com/watch?v=GYYpqHZIG1A for Detailed Video.
 
 ---
